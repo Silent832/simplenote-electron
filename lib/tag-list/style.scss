@@ -26,9 +26,7 @@
     h2 {
       font-size: 16px;
       font-weight: 400;
-      margin-bottom: 0;
-      text-transform: capitalize;
-      color: $studio-gray-80;
+      margin: 0;
     }
 
     button {
@@ -61,12 +59,6 @@
 
   svg {
     cursor: pointer;
-  }
-}
-
-.tag-list-item {
-  .icon-trash {
-    margin-right: 15px;
   }
 }
 
@@ -106,18 +98,28 @@ button.tag-list-input {
   }
 }
 
-.icon-reorder {
-  margin-right: 5px;
-  color: $studio-gray-10;
+.button-reorder {
+  margin-right: 8px;
 }
 
 .theme-dark {
-  .icon-reorder {
-    color: $studio-gray-50;
+  .icon-button {
+    &.button-reorder {
+      color: $studio-gray-50;
+    }
+    &.button-trash {
+      color: $studio-simplenote-blue-30;
+    }
   }
-  .tag-list-title {
-    .panel-title {
-      color: $studio-white;
+}
+
+.theme-light {
+  .icon-button {
+    &.button-trash {
+      color: $studio-simplenote-blue-30;
+    }
+    &.button-reorder {
+      color: $studio-gray-10;
     }
   }
 }

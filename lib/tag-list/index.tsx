@@ -8,7 +8,6 @@ import {
   SortEndHandler,
 } from 'react-sortable-hoc';
 import isEmailTag from '../utils/is-email-tag';
-import PanelTitle from '../components/panel-title';
 import ReorderIcon from '../icons/reorder';
 import TagListInput from './input';
 import TrashIcon from '../icons/trash';
@@ -83,12 +82,12 @@ const SortableTag = SortableElement(
         value={tag.name}
       />
       {editingActive && (
-        <button className="button-borderless">
+        <button className="icon-button button-trash">
           <TrashIcon onClick={() => trashTag(tag.name)} />
         </button>
       )}
       {editingActive && allowReordering && (
-        <button className="theme-color-fg-dim">
+        <button className="icon-button button-reorder theme-color-fg-dim">
           <TagHandle />
         </button>
       )}
@@ -176,7 +175,7 @@ export class TagList extends Component<Props> {
     return (
       <div className={classes}>
         <div className="tag-list-title theme-color-border">
-          <PanelTitle headingLevel={2}>Tags</PanelTitle>
+          <h2 className="theme-color-fg">Tags</h2>
           {sortedTags.length > 0 && (
             <button
               className="tag-list-edit-toggle button button-borderless"
